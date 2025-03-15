@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #3498db;
+  --secondary: #2ecc71;
+  --dark: #2c3e50;
+  --light: #ffffff;
+  --error: #e74c3c;
+  --success: #2ecc71;
+  --bg-light: #f7f9fc;
+  --transition: 0.3s ease;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --hover-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  --border-radius: 12px;
+  --font-family: 'Inter', sans-serif;
+}
+
+.container {
+  max-width: 650px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background-color: var(--light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  font-family: var(--font-family);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+  position: relative;
+}
+
+.title:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 3px;
+}
+
+.currentConfig {
+  background: linear-gradient(to right, rgba(52, 152, 219, 0.08), rgba(46, 204, 113, 0.08));
+  border-left: 4px solid var(--primary);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.currentConfig:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+}
+
+.currentConfig p {
+  font-size: 1.1rem;
+  color: var(--dark);
+  font-weight: 500;
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.form label {
+  font-weight: 600;
+  color: var(--dark);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.input {
+  padding: 14px 18px;
+  font-size: 1rem;
+  border: 1px solid #e6eaee;
+  border-radius: 10px;
+  transition: all var(--transition);
+  background-color: #f8fafc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  width: 100%;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+  transform: translateY(-2px);
+  background-color: var(--light);
+}
+
+.submitButton {
+  padding: 14px 24px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--light);
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.2);
+  margin-top: 1rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.submitButton:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s;
+}
+
+.submitButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(46, 204, 113, 0.3);
+  background: linear-gradient(135deg, #2980b9, #27ae60);
+}
+
+.submitButton:hover:before {
+  left: 100%;
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.error {
+  color: var(--error);
+  background-color: rgba(231, 76, 60, 0.1);
+  padding: 14px;
+  border-radius: 8px;
+  border-left: 4px solid var(--error);
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+.success {
+  color: var(--success);
+  background-color: rgba(46, 204, 113, 0.1);
+  padding: 14px;
+  border-radius: 8px;
+  border-left: 4px solid var(--success);
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 1.5rem;
+    padding: 1.5rem;
+    width: calc(100% - 3rem);
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .currentConfig {
+    padding: 1rem;
+  }
+}

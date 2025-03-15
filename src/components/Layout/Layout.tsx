@@ -18,6 +18,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         <nav className={styles.nav}>
           <Link to="/" className={styles.navLink}>All Questions</Link>
           <Link to="/new" className={styles.navLink}>Add New Question</Link>
+          <Link to="/config" className={styles.navLink}>Edits Extension Config</Link>
         </nav>
       </header>
       
